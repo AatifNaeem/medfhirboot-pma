@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-neutral {
+    color: #6095ad;
+}
+
+/* Neutral outline button hover fix */
+.btn-outline-neutral:hover {
+    background-color: #6095ad !important;
+    /* neutral */
+    color: white !important;
+    /* neutral-content */
+    border-color: hsl(var(--n)) !important;
+}
