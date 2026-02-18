@@ -1,5 +1,4 @@
-import React from 'react';
-import { Edit2 } from "lucide-react";
+import { Edit2, Trash2, User, Phone, Calendar } from "lucide-react";
 
 const PatientCard = ({ patient, onEdit }) => {
     const name = patient.name?.[0];
@@ -19,21 +18,41 @@ const PatientCard = ({ patient, onEdit }) => {
             <div className="flex flex-col gap-1">
                 <div className="font-medium text-lg text-primary-content">
                     {fullName}
-                    {phone && (
+                    {/* {phone && (
                         <span className="text-sm text-gray-500">
                             &nbsp;- {phone}
                         </span>
-                    )}
+                    )} */}
                 </div>
 
                 <div className="text-sm">
-                    <span className='font-semibold text-neutral'>Gender: </span>
-                    <span className='text-gray-700'>{patient.gender ?? "unknown"}</span>
+                    <dt className="flex items-center gap-1.5 font-semibold text-neutral">
+                        <User size={14} />
+                        <span>Gender: </span>
+                        <span className='text-gray-700 font-normal'>{patient.gender ?? "unknown"}</span>
+                    </dt>
+                    {/* <span className='font-semibold text-neutral'>Gender: </span>
+                    <span className='text-gray-700'>{patient.gender ?? "unknown"}</span> */}
                 </div>
 
                 <div className="text-sm">
-                    <span className='font-semibold text-neutral'>Date of Birth: </span>
-                    <span className='text-gray-700'>{patient.birthDate ?? "unknown"}</span>
+                    <dt className="flex items-center gap-1.5 font-semibold text-neutral">
+                        <Calendar size={14} />
+                        <span>Date of Birth: </span>
+                        <span className='text-gray-700 font-normal'>{patient.birthDate ?? "unknown"}</span>
+                    </dt>
+                    {/* <span className='font-semibold text-neutral'>Date of Birth: </span>
+                    <span className='text-gray-700'>{patient.birthDate ?? "unknown"}</span> */}
+                </div>
+
+                <div className="text-sm">
+                    <dt className="flex items-center gap-1.5 font-semibold text-neutral">
+                        <Phone size={14} />
+                        <span>Phone: </span>
+                        <span className='text-gray-700 font-normal'>{phone ?? "unknown"}</span>
+                    </dt>
+                    {/* <span className='font-semibold text-neutral'>Date of Birth: </span>
+                    <span className='text-gray-700'>{patient.birthDate ?? "unknown"}</span> */}
                 </div>
             </div>
 
@@ -48,6 +67,12 @@ const PatientCard = ({ patient, onEdit }) => {
                 </button>
 
                 {/* Add more icons here if needed, e.g., delete */}
+                <button
+                    className="font-semibold btn btn-sm btn-square btn-outline btn-outline-error text-error text-center"
+                    aria-label="Edit Patient"
+                >
+                    <Trash2 size={14} />
+                </button>
             </div>
         </div>
     );

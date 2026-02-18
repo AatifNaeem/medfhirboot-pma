@@ -14,3 +14,22 @@
     /* neutral-content */
     border-color: hsl(var(--n)) !important;
 }
+
+/* Error outline button hover fix */
+.btn-outline-error:hover {
+    background-color: #EF4C53 !important;
+    /* neutral */
+    color: white !important;
+    /* neutral-content */
+    border-color: hsl(var(--n)) !important;
+}
+
+/* Radio button neutral fix */
+.radio-neutral {
+    border-color: #6095ad !important;
+    ;
+}
+
+.radio-neutral-selected {
+    background-color: #6095ad !important;
+}
