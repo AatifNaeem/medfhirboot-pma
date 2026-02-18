@@ -212,14 +212,16 @@ const PatientsPage = () => {
             />
 
             <div className="p-4">
-                <div className="flex justify-between items-center mb-12">
-                    <h2 className="font-semibold items-center text-2xl text-neutral">PATIENT MANAGEMENT</h2>
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 lg:mb-12 gap-4">
+                    <h2 className="font-semibold text-2xl text-neutral text-center sm:text-left w-full sm:w-auto">
+                        PATIENT MANAGEMENT
+                    </h2>
 
-                    <div className="flex items-center space-x-2">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto sm:justify-end">
                         {/* Add Patient Button */}
                         <button
                             onClick={() => openPatientModal(null)}
-                            className="flex items-center btn btn-sm btn-neutral"
+                            className="flex items-center justify-center btn btn-sm btn-neutral w-full sm:w-auto"
                             aria-label="Add Patient"
                         >
                             <Plus className="text-white" size={16} />
@@ -229,10 +231,12 @@ const PatientsPage = () => {
                         {/* Server Selection Button */}
                         <button
                             onClick={openSettingsModal}
-                            className="flex items-center btn btn-sm btn-error"
+                            className="flex items-center justify-center btn btn-sm btn-error w-full sm:w-auto"
                             aria-label="Change FHIR Server"
                         >
-                            <span className="text-sm text-white">{getCurrentServerName()}</span>
+                            <span className="text-sm text-white truncate max-w-[180px] text-center sm:text-left">
+                                {getCurrentServerName()}
+                            </span>
                             <ChevronDown className="text-white ml-1" size={16} />
                         </button>
                     </div>

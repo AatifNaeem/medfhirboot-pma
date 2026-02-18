@@ -36,8 +36,8 @@ const SettingsModal = ({ isOpen, onClose, currentBaseURL, onServerChange }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-            <div className="bg-white rounded-lg p-6 w-full max-w-md">
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-4 sm:px-0">
+            <div className="bg-white rounded-lg p-4 sm:p-6 w-full max-w-md max-h-[90vh] overflow-y-auto">
                 <h2 className="font-semibold text-2xl text-neutral mb-4">
                     FHIR Server Settings
                 </h2>
@@ -66,18 +66,18 @@ const SettingsModal = ({ isOpen, onClose, currentBaseURL, onServerChange }) => {
                         </div>
                     </div>
 
-                    <div className="flex justify-end gap-2 mt-6">
+                    <div className="flex flex-col sm:flex-row sm:justify-end gap-2 mt-6">
                         <button
                             type="button"
                             onClick={onClose}
-                            className="btn btn-sm btn-outline btn-outline-neutral text-gray-700"
+                            className="btn btn-sm btn-outline btn-outline-neutral text-gray-700 w-full sm:w-auto"
                         >
                             Cancel
                         </button>
 
                         <button
                             type="submit"
-                            className="btn btn-sm btn-neutral text-white"
+                            className="btn btn-sm btn-neutral text-white w-full sm:w-auto"
                         >
                             Save
                         </button>

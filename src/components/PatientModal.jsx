@@ -95,8 +95,8 @@ const PatientModal = ({ isOpen, onClose, onSubmit, patient }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-            <div className="bg-white rounded-lg p-6 w-full max-w-md relative">
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-4 sm:px-0">
+            <div className="bg-white rounded-lg p-4 sm:p-6 w-full max-w-md max-h-[90vh] overflow-y-auto relative">
                 {submitting && (
                     <div className="absolute inset-0 flex items-center justify-center bg-white/80 rounded-lg z-10">
                         <div className="h-12 w-12 animate-spin rounded-full border-4 border-neutral/30 border-t-neutral" />
@@ -190,12 +190,12 @@ const PatientModal = ({ isOpen, onClose, onSubmit, patient }) => {
                             )}
                         </div>
 
-                        <div className="flex justify-end gap-2 mt-6">
+                        <div className="flex flex-col sm:flex-row sm:justify-end gap-2 mt-6">
                             <button
                                 type="button"
                                 onClick={onClose}
                                 disabled={submitting}
-                                className="btn btn-sm btn-outline btn-outline-neutral text-gray-700 disabled:opacity-70"
+                                className="btn btn-sm btn-outline btn-outline-neutral text-gray-700 disabled:opacity-70 w-full sm:w-auto"
                             >
                                 Cancel
                             </button>
@@ -203,7 +203,7 @@ const PatientModal = ({ isOpen, onClose, onSubmit, patient }) => {
                             <button
                                 type="submit"
                                 disabled={submitting}
-                                className="btn btn-sm btn-neutral text-white disabled:opacity-70"
+                                className="btn btn-sm btn-neutral text-white disabled:opacity-70 w-full sm:w-auto"
                             >
                                 {patient ? "Update" : "Create"}
                             </button>
