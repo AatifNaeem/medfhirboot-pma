@@ -243,7 +243,6 @@ const PatientsPage = () => {
                 </div>
 
                 <div className="px-0 sm:px-12 lg:px-24">
-                    {/* <div className="flex items-center justify-between mb-3 gap-3"> */}
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-3 gap-3">
                         <Search
                             searchName={searchName}
